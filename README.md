@@ -9,7 +9,7 @@
 1. Download this repo
 2. Unzip `videos.zip` (if you want videos)
 3. Open `index.html` in your browser.
-4. if u need to nun check fake link process install (xaamp/waamp) servers to run it.
+4. if u need to nun check fake link process  page install (xaamp/waamp) servers to run it.
 
 ### ✨ Features
 - Awareness Home Page
