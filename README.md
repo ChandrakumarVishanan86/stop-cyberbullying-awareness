@@ -9,7 +9,7 @@
 1. Download this repo
 2. Chek well all video and connection to view (fullfill) page
 3. Open `index.html` in your browser.
-4. if u need to nun check fake link process  page install (xaamp/waamp) servers to run it.
+4. if u need to run & check fake link process  page install (xaamp/waamp) servers and host that page to run it.
 
 ### ✨ Features
 - Awareness Home Page
