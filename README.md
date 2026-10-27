@@ -7,7 +7,7 @@
 
 ### ▶️ How to Run
 1. Download this repo
-2. Unzip `videos.zip` (if you want videos)
+2. Chek well all video and connection to view (fullfill) page
 3. Open `index.html` in your browser.
 4. if u need to nun check fake link process  page install (xaamp/waamp) servers to run it.
 
