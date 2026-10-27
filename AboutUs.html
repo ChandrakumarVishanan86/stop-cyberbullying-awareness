@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Us - Stop Cyberbullying</title>
+  <style>
+    /* Make the video fill the entire screen and stay behind the content */
+    #bg-video {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      z-index: -1;
+      object-fit: cover;
+    }
+
+    /* Content container */
+    .content {
+      position: relative;
+      z-index: 1;
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+      font-family: Arial, sans-serif;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      max-width: 800px;
+      margin: auto;
+    }
+
+    /* Heading style */
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+
+    /* Paragraph style */
+    p {
+      font-size: 1.2em;
+      line-height: 1.6em;
+    }
+
+    /* Optional: Responsive text size */
+@media (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+      p {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+     <button onclick="window.location.href='index.html';" 
+  style="
+    position: fixed;
+    bottom: 10px;  /* Change this value to move button up/down */
+    left: 10%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #ff6ec4, #7873f5);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255,110,196,0.6);
+    transition: background 0.3s ease;
+  "
+  onmouseover="this.style.background='linear-gradient(45deg, #7873f5, #ff6ec4)'"
+  onmouseout="this.style.background='linear-gradient(45deg, #ff6ec4, #7873f5)'"
+>
+  &lt; Return to Home
+</button>
+
+
+  <!-- Background Video -->
+  <video autoplay muted loop id="bg-video">
+    <source src="Video3.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Content -->
+  <div class="content">
+    <h2><b>About Us</b></h2>
+    <p>Welcome to our website dedicated to reducing and stopping cyberbullying. We believe in creating a safe and supportive online community. Together, we can make the internet a better place for everyone.</p>
+    <p>Cyberbullying is a serious issue affecting millions worldwide. Our mission is to raise awareness, provide resources, and support victims.</p>
+    <!-- You can add your picture here -->
+    <img src="Vishanan.jpg" alt="Vishanan" style="width:150px; border-radius: 50%; margin-top: 20px;">
+	<h3> <b> I am Vishanan_Student of HND IT</b><h3>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Echoes of Words</title>
+  <link rel="stylesheet" href="G2style.css">
+</head>
+<body>
+
+<div class="game">
+  <div class="header">
+    <h2>Echoes of Words</h2>
+    <p>Words remain. Actions heal.</p>
+    <p>Stress Level: <span id="stress">0</span></p>
+  </div>
+
+  <div class="mind-area">
+    <div class="mind" id="mind"></div>
+  </div>
+
+  <div class="controls">
+    <button class="remove" onclick="removeWord()">REMOVE HATE</button>
+    <button class="heal" onclick="healMind()">HEAL SUPPORT</button>
+  </div>
+
+  <div class="gameover" id="gameOver">
+    <h1>Mind Overloaded</h1>
+    <p>Unchecked words caused harm.</p>
+    <p>💙 Speak up. Support early.</p>
+    <button onclick="restart()">Try Again</button>
+  </div>
+</div>
+
+<script src="G2script.js"></script>
+</body>
+</html>
+        <button onclick="window.location.href='index.html';" 
+  style="
+    position: fixed;
+    bottom: 10px;  /* Change this value to move button up/down */
+    left: 80%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #ff6ec4, #7873f5);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(255,110,196,0.6);
+    transition: background 0.3s ease;
+  "
+  onmouseover="this.style.background='linear-gradient(45deg, #7873f5, #ff6ec4)'"
+  onmouseout="this.style.background='linear-gradient(45deg, #ff6ec4, #7873f5)'"
+>
+  &lt; Return to Home
+</button>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+  
+</style>
+
+
+<head>
+<style>
+  .home-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    font-size: 12px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+	
+  }
+</style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cyberbullying Awareness Form</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #2c3e50;
+    color: #ecf0f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+  }
+  .form-container {
+    background: #34495e;
+    padding: 30px;
+    border-radius: 10px;
+    width: 350px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+  }
+  input, textarea, select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+  }
+  textarea {
+    resize: vertical;
+	}
+  button {
+    margin-top: 20px;
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .btn-save {
+    background-color: #27ae60;
+    color: white;
+  }
+  .btn-clear {
+    background-color: #c0392b;
+    color: white;
+    float: right;
+  }
+</style>
+</head>
+<body>
+   <button onclick="window.location.href='index.html';" 
+  style="
+    position: fixed;
+    bottom: 10px;  /* Change this value to move button up/down */
+    left: 10%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, #ff6ec4, #7873f5);
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 30px;
+    font-size: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(255,110,196,0.6);
+    transition: background 0.3s ease;
+  "
+  onmouseover="this.style.background='linear-gradient(45deg, #7873f5, #ff6ec4)'"
+  onmouseout="this.style.background='linear-gradient(45deg, #ff6ec4, #7873f5)'">
+
+  &lt; Return to Home
+</button>
+</body>
+         
+
+<div class="form-container">
+  <h2>Report Cyberbullying</h2>
+  <form id="cyberForm">
+    <label for="name">Your Name *</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="email">Your Email *</label>
+    <input type="email" id="email" name="email" required />
+
+    <label for="type">Type of Cyberbullying *</label>
+    <select id="type" name="type" required>
+      <option value="">Select</option>
+      <option value="Harassment">Harassment</option>
+      <option value="Impersonation">Impersonation</option>
+      <option value="Exclusion">Exclusion</option>
+      <option value="Cyberstalking">Cyberstalking</option>
+      <option value="Others">Others</option>
+    </select>
+
+    <label for="description">Description *</label>
+    <textarea id="description" name="description" rows="4" placeholder="Describe the incident" required></textarea>
+
+    <button type="submit" class="btn-save">Submit</button>
+	<button type="button" class="btn-clear" onclick="clearForm()">Clear</button>
+  </form>
+  
+    
+  <script>
+    function seeAbout() {
+      alert("Redirecting to About Page...");
+      window.location.href = "http://localhost/myproject/Forms&Tools"; // replace with your actual page
+    }
+	 
+  </script>
+</div>
+
+<script>
+   
+
+function showAlert() {
+  alert("Your form has been submitted successfully!");
+}
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("YOUR_USER_ID"); // Replace YOUR_USER_ID with your EmailJS user ID
+  })();
+
+  const form = document.getElementById('cyberForm');
+
+  form.addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+      .then(() => {
+        alert('Report sent successfully!');
+        form.reset();
+      }, (error) => {
+        alert('Failed to send report. Please try again later.');
+        console.error(error);
+      });
+  });
+
+  function clearForm() {
+    if(confirm('Are you sure you want to clear the form?')) {
+      form.reset();
+      alert('Form cleared.');
+    }
+  }
+</script>
+
+
+</body>
+</html>

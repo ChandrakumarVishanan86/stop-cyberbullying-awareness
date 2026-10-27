@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css" />
+<script src="script.js"></script>
+
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Stop Cyberbullying - Activity</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }
+  nav a { margin: 0 15px; text-decoration: none; color: #007bff; }
+  nav a:hover { text-decoration: underline; }
+  header { text-align: center; margin-bottom: 30px; }
+  #answer { margin-top: 15px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Cyberbullying Activity: Identify Kind vs Mean Comments</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="resources.html">Resources</a>
+    <a href="activity.html">Activity</a>
+  </nav>
+</header>
+
+<p>Read the comments below and choose if they are <strong>Kind</strong> or <strong>Mean</strong>.</p>
+
+<ul>
+  <li>"You did a great job!" : <button onclick="checkAnswer('kind', this)">Kind</button> <button onclick="checkAnswer('mean', this)">Mean</button></li>
+  <li>"You're so stupid!"  :<button onclick="checkAnswer('mean', this)">Mean</button> <button onclick="checkAnswer('kind', this)">Kind</button></li>
+  <li>"Thanks for helping me!" : <button onclick="checkAnswer('kind', this)">Kind</button> <button onclick="checkAnswer('mean', this)">Mean</button></li>
+  <li>"Nobody likes you." : <button onclick="checkAnswer('mean', this)">Mean</button> <button onclick="checkAnswer('kind', this)">Kind</button></li>
+  <li>"You’re so talented, keep it up!" :  <button onclick="checkAnswer('kind', this)">Kind</button> <button onclick="checkAnswer('mean', this)">Mean</button>
+</li>
+</ul>
+
+<p id="answer"></p>
+
+<script>
+function checkAnswer(type, btn) {
+  const correctAnswers = {
+    0: 'kind',
+    1: 'mean',
+    2: 'kind',
+    3: 'mean',
+	4: 'kind'
+  };
+  const li = btn.parentElement;
+  const index = Array.from(li.parentElement.children).indexOf(li);
+  const answerDisplay = document.getElementById('answer');
+  
+  if (type === correctAnswers[index]) {
+    answerDisplay.textContent = 'Correct! That is a ' + type + ' comment.';
+  } else {
+    answerDisplay.textContent = 'Oops! That is not correct. Try again.';
+  }
+}
+</script>
+
+</body>
+</html>

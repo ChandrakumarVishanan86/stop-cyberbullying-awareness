@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css" />
+<script src="script.js"></script>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Stop Cyberbullying - Chatbot</title>
+<style>
+   
+
+  body { font-family: Arial, sans-serif; max-width: 700px; margin: auto; padding: 20px; }
+  nav a { margin: 0 15px; text-decoration: none; color: #007bff; }
+  nav a:hover { text-decoration: underline; }
+  header { text-align: center; margin-bottom: 30px; }
+  #chatbox { border: 1px solid #ccc; padding: 10px; height: 300px; overflow-y: auto; background: #f9f9f9; }
+  #userInput { width: 80%; padding: 10px; }
+  button { padding: 10px; }
+  .botMsg { color: green; margin: 5px 0; }
+  .userMsg { color: blue; margin: 5px 0; text-align: right; }
+</style>
+</head>
+<body>
+     <video autoplay muted loop id=video>
+  <source src="Video2.mp4" type="video/mp4">
+  Your browser does not support HTML5 video.
+</video>
+
+<header>
+  <h1>Cyberbullying Awareness Chatbot</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="resources.html">Resources</a>
+    <a href="chatbot.html">Chatbot</a>
+  </nav>
+</header>
+
+<div id="chatbox">
+  <div class="botMsg">Hi! Ask me anything about cyberbullying.</div>
+</div>
+
+<input type="text" id="userInput" placeholder="Type your question here..." />
+<button onclick="sendMessage()">Send</button>
+
+<script>
+const chatbox = document.getElementById('chatbox');
+
+function sendMessage() {
+  const input = document.getElementById('userInput');
+  const userText = input.value.trim();
+  if (!userText) return;
+  
+  appendMessage(userText, 'userMsg');
+  const botReply = getBotReply(userText.toLowerCase());
+  setTimeout(() => appendMessage(botReply, 'botMsg'), 500);
+  
+  input.value = '';
+}
+
+function appendMessage(text, className) {
+  const div = document.createElement('div');
+  div.className = className;
+  div.textContent = text;
+  chatbox.appendChild(div);
+  chatbox.scrollTop = chatbox.scrollHeight;
+}
+
+function getBotReply(input) {
+  if (input.includes('what is cyberbullying')) {
+    return 'Cyberbullying is bullying that happens through digital devices like phones and computers.';
+  } else if (input.includes('how to stop cyberbullying')) {
+    return 'You can stop cyberbullying by reporting it and supporting victims.';
+  } else if (input.includes('where to get help')) {
+    return 'You can visit websites like StopBullying.gov or talk to trusted adults.';
+  } else if (input.includes('who is affected')) {
+    return 'Anyone can be affected, but young people are the most common victims.';
+  } 
+    else if (input.includes('cyberbullying types')) {
+    return 'Common types include harassment, impersonation, exclusion, and cyberstalking.';
+  
+  } else if (input.includes('signs of cyberbullying')) {
+    return 'Victims may show signs like sadness, anxiety, avoiding social media, or sudden mood changes.';
+  } else if (input.includes('how to protect myself')) {
+    return 'Use strong passwords, don’t share personal info, and report abusive behavior immediately.';
+  } else if (input.includes('hi') || input.includes('hello')) {
+    return 'Hello! How can I help you today? You can ask me anything about cyberbullying.';
+  } else if (input.includes('good morning')) {
+    return 'Good morning! Hope you have a great day. What would you like to know about cyberbullying?';
+   
+  } else if (input.includes('how to report cyberbullying')) {
+  return 'You can report cyberbullying to social media platforms, school authorities, or local law enforcement.';
+  } else if (input.includes('can cyberbullying happen to adults')) {
+  return 'Yes, cyberbullying can affect people of all ages, not just children and teens.';
+  } else if (input.includes('what should i do if bullied')) {
+  return 'Don’t respond to the bully, save evidence, tell a trusted adult, and report the incident.';
+  } else if (input.includes('is cyberbullying illegal')) {
+  return 'In many countries, cyberbullying is against the law and can lead to legal consequences.';
+  } else if (input.includes('how to support someone bullied')) {
+  return 'Listen, be supportive, encourage them to get help, and stand by their side.';
+  } else if (input.includes('difference between bullying and cyberbullying')){
+  return 'Bullying happens face-to-face, while cyberbullying happens online or through digital devices.';
+  } else if (input.includes('can cyberbullying be prevented')) {
+  return 'Yes, by educating people, promoting kindness, and monitoring online behavior.';
+  } else if (input.includes('how to keep my online accounts safe')) {
+  return 'Use strong passwords, enable two-factor authentication, and don’t share your login details.';
+  } else if (input.includes('can cyberbullying affect mental health')) {
+  return 'Yes, it can lead to stress, anxiety, depression, and other mental health issues.';
+  } else if (input.includes('what is cyberstalking')) {
+  return 'Cyberstalking is repeated harassment or threatening behavior using electronic communications.';
+  } else if (input.includes('how to block a cyberbully')) {
+  return 'You can block them on social media, messaging apps, and change your privacy settings.';
+  } else if (input.includes('should i talk to my parents about cyberbullying')) {
+  return 'Yes, talking to trusted adults like your parents can help you get support and protection.';
+  } else if (input.includes('what is trolling')) {
+  return 'Trolling is posting inflammatory or offensive messages online to provoke others.';
+  } else if (input.includes('how to create strong passwords')) {
+  return 'Use a mix of letters, numbers, and symbols, and avoid using easily guessable info.';
+  } else if (input.includes('is cyberbullying the same as online bullying')) {
+  return 'Yes, both terms mean bullying through digital platforms like internet and phones.';
+  } else if (input.includes('what to do if i see cyberbullying')) {
+  return 'Don’t join in. Report it and support the victim if you can.';
+  } else if (input.includes('how to educate kids about cyberbullying')) {
+  return 'Teach them about online safety, respect, and how to report bad behavior.';
+  } else if (input.includes('can cyberbullying lead to suicide')) {
+  return 'Unfortunately, yes. It’s important to take it seriously and seek help immediately.';
+  } else if (input.includes('can parents prevent cyberbullying')) {
+  return 'Yes, parents can guide and monitor children’s online activities to help prevent cyberbullying.';
+  } else if (input.includes('how long does cyberbullying last')) {
+  return 'It varies; some incidents are short-lived, others can last a long time without intervention.';
+  } else if (input.includes('what should i do if i am a cyberbully')) {
+  return 'Recognize the harm caused and stop the behavior immediately. Seek help to change.';
+  } else if (input.includes('are schools responsible for cyberbullying')) {
+  return 'Many schools have policies and support systems to address cyberbullying among students.';
+  } else if (input.includes('what is doxxing')) {
+  return 'Doxxing is sharing someone’s private information online without their consent.';
+  } else if (input.includes('can cyberbullying affect work')) {
+  return 'Yes, cyberbullying can cause stress and anxiety that affect job performance.';
+  } else if (input.includes('how to report cyberbullying on social media')) {
+  return 'Most platforms have a “Report” feature; use it to notify moderators of abuse.';
+  } else if (input.includes('does blocking stop cyberbullying')) {
+  return 'Blocking helps reduce contact, but reporting and support are also important.';
+  } else if (input.includes('can cyberbullying happen anonymously')) {
+  return 'Yes, many cyberbullies hide their identity, making it harder to stop them.';
+  } else if (input.includes('how to support a friend who is cyberbullied')) {
+  return 'Listen, encourage them to report it, and offer emotional support.';
+  } else if (input.includes('what is kali linux')) {
+  return 'Kali Linux is specially designed for penetration testing, ethical hacking, and cybersecurity.';
+  } else if (input.includes('can cyberbullying be anonymous')) {
+  return 'Yes, many cyberbullies hide their identity, which makes it harder to trace them.';
+  } else if (input.includes('how does technology help stop cyberbullying')) {
+  return 'AI and machine learning tools can detect abusive content and flag or block harmful users.';
+  } else if (input.includes('what should i do if i am bullied online')) {
+  return 'Take screenshots, block the person, report the incident, and talk to a trusted adult.';
+  } else if (input.includes('what is digital footprint')) {
+  return 'A digital footprint is all the information you leave behind online, like posts, likes, and messages.';
+  } else if (input.includes('is ai used to detect cyberbullying')) {
+  return 'Yes, AI is used to analyze text patterns and identify harmful behavior online.';
+  } else if (input.includes('how to support a friend who is cyberbullied')) {
+  return 'Listen to them, remind them it’s not their fault, help them report it, and be kind.';
+  } else if (input.includes('what is kali linux')) {
+  return 'Kali Linux is a tool used by cybersecurity experts for ethical hacking and testing security systems.';
+ 
+
+    }else {
+    return "Sorry, I don't understand. Please ask another question.";
+  }
+}
+</script>
+
+</body>
+</html>

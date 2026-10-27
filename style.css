@@ -1,0 +1,155 @@
+/* Basic Reset */
+
+  css
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #004aad;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+nav a {
+  color: Green;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+  color: #ffd700;
+}
+
+main {
+  flex-grow: 1;
+  padding: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  animation: fadeIn 1s ease forwards;
+}
+
+footer {
+  background-color: #004aad;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  box-shadow: 0 -4px 6px rgba(0,0,0,0.2);
+}
+
+/* Animations */           
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+/* Buttons */              
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  "Clicking unknown links"
+    ],
+    answer: 1
+  },
+  {
+    question: "Who can help if you are a victim of cyberbullying?",
+    options: [
+      "Teachers",
+      "Friends and Family",
+      "Authorities",
+      "All of the above"
+    ],
+    answer: 3
+  }
+];               
+
+const questionEl = document.getElementById('question');
+const optionsEl = document.getElementById('options');
+const nextBtn = document.getElementById('next-btn');
+const scoreEl = document.getElementById('score');
+
+let currentQuestion = 0;
+let score = 0;
+
+function loadQuestion() {
+  clearOptions();
+  const current = quizData[currentQuestion];
+  questionEl.textContent = current.question;
+  current.options.forEach((option, index) => {
+    const btn = document.createElement('button');
+    btn.textContent = option;
+    btn.addEventListener('click', () => selectOption(index));
+    optionsEl.appendChild(btn);
+  });
+  scoreEl.textContent = '';
+  nextBtn.style.display = 'none';
+}
+
+function clearOptions() {
+  optionsEl.innerHTML = '';
+}
+
+function selectOption(selectedIndex) {
+  const current = quizData[currentQuestion];
+  const buttons = optionsEl.querySelectorAll('button');
+  buttons.forEach((btn, idx) => {
+    btn.disabled = true;
+    if(idx === current.answer) {
+      btn.style.backgroundColor = '#28a745'; // green correct
+	  btn.style.color = 'white';
+    }
+    if(idx === selectedIndex && idx !== current.answer) {
+      btn.style.backgroundColor = '#dc3545'; // red wrong
+      btn.style.color = 'white';
+    }
+  });
+  if(selectedIndex === current.answer) {
+    score++;
+  }
+  nextBtn.style.display = 'inline-block';
+}
+
+nextBtn.addEventListener('click', () => {
+  currentQuestion++;
+  if(currentQuestion < quizData.length) {
+    loadQuestion();
+  } else {
+    showScore();
+  }
+});
+
+function showScore() {
+  questionEl.textContent = 'Quiz Completed!';
+  clearOptions();
+  scoreEl.textContent = Your score: score out of{quizData.length};
+  nextBtn.style.display = 'none';
+}
+
+// Load the first question on page load
+if(questionEl && optionsEl && nextBtn) {
+  loadQuestion();
+}

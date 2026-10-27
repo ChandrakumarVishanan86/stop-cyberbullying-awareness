@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css" />
+
+<script src="script.js"></script>
+
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Stop Cyberbullying - Quiz</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 800px; margin: auto; padding: 20px; }
+  nav a { margin: 0 15px; text-decoration: none; color: #007bff; }
+  nav a:hover { text-decoration: underline; }
+  header { text-align: center; margin-bottom: 30px; }
+  button { margin-top: 10px; }
+  #result { margin-top: 20px; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Cyberbullying Awareness Quiz</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="quiz.html">Quiz</a>
+    <a href="resources.html">Resources</a>
+  </nav>
+</header>
+
+<form id="quizForm">
+  <p>1. What is cyberbullying?</p>
+  <input type="radio" name="q1" value="correct" id="q1a1" /> 
+  <label for="q1a1">Bullying using digital devices</label><br />
+  <input type="radio" name="q1" value="wrong" id="q1a2" />
+  <label for="q1a2">Playing video games</label><br />
+
+  <p>2. What should you do if you see cyberbullying?</p>
+  <input type="radio" name="q2" value="correct" id="q2a1" />
+  <label for="q2a1">Report it to a trusted adult</label><br />
+  <input type="radio" name="q2" value="wrong" id="q2a2" />
+  <label for="q2a2">Ignore it</label><br />
+
+  <p>3. Which of these is a safe way to behave online?</p>
+  <input type="radio" name="q3" value="correct" id="q3a1" />
+  <label for="q3a1">Be kind and respectful</label><br />
+  <input type="radio" name="q3" value="wrong" id="q3a2" />
+  <label for="q3a2">Send mean messages</label><br />
+  
+  <p>4. Which of the following is an example of cyberbullying?</p>
+  <input type="radio" name="q4" value="wrong" id="q4a1" />
+  <label for="q4a1">Complimenting someone on their post</label><br />
+  <input type="radio" name="q4" value="correct" id="q4a2" />
+  <label for="q4a2">Posting hurtful comments about someone</label><br />
+ 
+
+
+  <button type="button" onclick="checkAnswers()">Submit</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+function checkAnswers() {
+  let total = 4;
+  let score = 0;
+  const form = document.forms['quizForm'];
+
+  for(let i=1; i<=total; i++) {
+    let options = form['q'+i];
+    for(let opt of options) {
+	if(opt.checked && opt.value === 'correct') score++;
+    }
+  }
+
+  document.getElementById('result').textContent = 'Your Score: ' + score + ' / ' + total;
+}
+</script>
+
+</body>
+</html>
+
